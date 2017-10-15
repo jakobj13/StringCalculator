@@ -30,5 +30,14 @@ public class CalculatorTest {
 		assertEquals(10, Calculator.add("1,4,5"));
 	}
 
+	@Test
+	public void TestNewlinesInNumbers() {
+		
+		assertEquals(6, Calculator.add("1\n2,3"));
+	}
+
+
+	
+
 	
 }
