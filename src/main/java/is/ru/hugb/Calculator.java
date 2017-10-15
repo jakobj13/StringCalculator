@@ -11,7 +11,8 @@ public	class	Calculator	{
 							String stringnumb[] = numbers.split(",");
 							return toInt(stringnumb[0]) + toInt(stringnumb[1]);
 						}
-						return 1;
+
+						return toInt(numbers);
 					}
 				}
 
