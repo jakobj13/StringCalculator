@@ -5,25 +5,13 @@ import java.util.ArrayList;import java.util.List;
 public	class	Calculator	{
 				
 				public	static int add(String numbers)	{
-					List negNumbers = new ArrayList();
 					if(numbers.equals(""))
 						return 0;
 					else{
 						if(numbers.contains("\n") | (numbers.contains(","))){
 							String stringnumb[] = numbers.split(",|\n");
 
-							for(String number : stringnumb){
-								int numberInt = toInt(number);
-								if(numberInt < 0){
-									negNumbers.add(number);
-								}
-							}
-							
-							if (negNumbers.size() > 0) {
-        						throw new RuntimeException("Negatives not allowed: " + negNumbers.toString().replace("[", "").replace("]", ""));
-
-
-    						}
+							negCheck(stringnumb);
 							return sum(stringnumb);
 						}
 
@@ -41,6 +29,23 @@ public	class	Calculator	{
 						total += toInt(number);
 					}
 					return total;
+				}
+
+				public static void negCheck(String [] numbers){
+					List negNumbers = new ArrayList();
+
+					for(String number : numbers){
+						int numberInt = toInt(number);
+						if(numberInt < 0){
+							negNumbers.add(number);
+						}
+					}
+
+					if (negNumbers.size() > 0) {
+						throw new RuntimeException("Negatives not allowed: " + negNumbers.toString().replace("[", "").replace("]", ""));
+
+					}
+
 				}
 
 				 public static void main(String[] args) {
