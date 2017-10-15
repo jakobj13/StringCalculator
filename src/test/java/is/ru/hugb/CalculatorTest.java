@@ -51,6 +51,12 @@ public class CalculatorTest {
 
 	}
 
+	@Test
+	public void TestBigNumbers() {
+		
+		assertEquals(1009, Calculator.add("3,1000,1201,6,1425"));
+	}
+
 	
 
 	

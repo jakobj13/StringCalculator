@@ -25,10 +25,14 @@ public	class	Calculator	{
 
 				private static int sum(String [] numbers){
 					int total = 0;
+					int trash = 0;
 					for(String number : numbers){
+						if(toInt(number) > 1000){
+							trash += toInt(number);
+						}
 						total += toInt(number);
 					}
-					return total;
+					return total - trash;
 				}
 
 				public static void negCheck(String [] numbers){
