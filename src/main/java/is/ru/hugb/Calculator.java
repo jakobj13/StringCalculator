@@ -7,6 +7,10 @@ public	class	Calculator	{
 					if(numbers.equals(""))
 						return 0;
 					else{
+						if(numbers.contains(",")){
+							String stringnumb[] = numbers.split(",");
+							return Integer.parseInt(stringnumb[0]) + Integer.parseInt(stringnumb[1]);
+						}
 						return 1;
 					}
 				}
