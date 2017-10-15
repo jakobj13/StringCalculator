@@ -9,7 +9,11 @@ public	class	Calculator	{
 					else{
 						if(numbers.contains(",")){
 							String stringnumb[] = numbers.split(",");
-							return toInt(stringnumb[0]) + toInt(stringnumb[1]);
+							int total = 0;
+							for(String number : stringnumb){
+								total += toInt(number);
+							}
+							return total;
 						}
 
 						return toInt(numbers);
